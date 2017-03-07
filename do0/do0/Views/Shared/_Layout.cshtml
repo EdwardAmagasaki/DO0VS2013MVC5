@@ -6,40 +6,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Meu Aplicativo ASP.NET</title>
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/mdb")
     @Scripts.Render("~/bundles/modernizr")
-
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Nome do aplicativo", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    <header>
+        <!--Navbar-->
+        <nav class="navbar navbar-dark black navbar-fixed-top">
+
+            <!-- Collapse button-->
+            <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#collapseEx">
+                <i class="fa fa-bars"></i>
+            </button>
+
+            <div class="container text-xs-center" style="padding-top:10px;">
+
+                <!--Collapse content-->
+                <div class="collapse navbar-toggleable-xs" id="collapseEx">
+                    <!--Navbar Brand-->
+                    <a href="~/" class="navbar-brand">
+                        do0 WEB
+                    </a>
+                    <!--Links-->
+                    <ul class="nav navbar-nav" style="display: inline-block;">
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/home/contact">Contato</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/home/About"><i class="fa fa-video-camera" aria-hidden="true"></i> Sobre</a>
+                        </li>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+
+                </div>
+                <!--/.Collapse content-->
+
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Início", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Sobre", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contato", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
-        </div>
-    </div>
+
+        </nav>
+        <!--/.Navbar-->
+    </header>
+
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Meu Aplicativo ASP.NET</p>
-        </footer>
     </div>
+
+    <!--Footer-->
+    <footer class="page-footer black center-on-small-only">
+
+        <!--Footer Links-->
+        <div class="container">
+            <div class="row">
+
+                <!--First column-->
+                <div class="col-md-6">
+                    <h5 class="title">Footer Content</h5>
+                    <p>Here you can use rows and columns here to organize your footer content.</p>
+                </div>
+                <!--/.First column-->
+                <!--Second column-->
+                <div class="col-md-6">
+                    <h5 class="title">Links</h5>
+                    <ul>
+                        <li><a href="#!">Link 1</a></li>
+                        <li><a href="#!">Link 2</a></li>
+                        <li><a href="#!">Link 3</a></li>
+                        <li><a href="#!">Link 4</a></li>
+                    </ul>
+                </div>
+                <!--/.Second column-->
+            </div>
+        </div>
+        <!--/.Footer Links-->
+        <!--Copyright-->
+        <div class="footer-copyright">
+            <div class="container-fluid">
+                © 2017 Copyright: <a href="https://www.do0.com.br"> do0 WEB </a>
+
+            </div>
+        </div>
+        <!--/.Copyright-->
+
+    </footer>
+    <!--/.Footer-->
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/tether")
+    @Scripts.Render("~/bundles/mdb")
+
     @RenderSection("scripts", required: false)
 </body>
 </html>

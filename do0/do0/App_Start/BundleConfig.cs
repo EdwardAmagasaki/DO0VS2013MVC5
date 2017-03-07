@@ -23,9 +23,18 @@ namespace do0
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/tether").Include(
+                      "~/Scripts/tether.min.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/mdb").Include(
+                      "~/Scripts/mdb.min.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/style.css"));
+            
+            bundles.Add(new StyleBundle("~/Content/mdb").Include(
+                      "~/Content/mdb.css"));
         }
     }
 }
