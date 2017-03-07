@@ -21,7 +21,7 @@ namespace do0.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("do0Context", throwIfV1Schema: false)
         {
         }
 
